@@ -1,12 +1,11 @@
 <meta charset="utf-8" />
 <textarea name="txt" id="module-id-history">
-  <div class="m-ctr">
     <!-- <h3 >Today's List</h3> -->
     <h3>历史完成情况</h3>
     <div class="his-content" id="his-content">
     </div>
-  </div>
-  <textarea name="jst" id="his-template">
+</textarea>
+<textarea name="jst" id="his-template">
     {if defined("hislist")} {if hislist&&hislist.length}
 {list hislist as h}
       <h4 class="date">

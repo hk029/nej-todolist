@@ -1,51 +1,38 @@
-.m-ctr {
-  margin-top: 70px;
-  background: white;
-}
-
-.m-ctr h3 {
-  padding:0 0 20px; 
-  font-size: 18px;
-  line-height: 30px;
-  color:#253b6a;
-  text-align: center;
-}
-
-.m-ctr .his-content h4{
+ .his-content h4{
   border-bottom: 1px dashed #aaa;
   padding-bottom: 10px;
-  font-size: 12px;
+  font-size: 14px;
   color: #333;
 }
-.m-ctr .his-content {
+ .his-content {
   padding: 0px 30px;
 }
 
-.m-ctr .his-content ul {
+ .his-content ul {
   list-style: none;
   margin-bottom: 30px;
 }
 
-.m-ctr .his-content li {
+ .his-content li {
   margin: 10px 0;
 }
 
-.m-ctr .his-content li .text {
+ .his-content li .text {
   padding: 2px 2px;
   border: none;
-  font-size: 14px;
+  font-size: 16px;
   margin-left: 10px;
   width: 180px;
   color:#666;
   outline-color:#55a8c3;
 }
 
-.m-ctr .his-content img {
-  width: 14px;
+ .his-content img {
+  width: 16px;
   vertical-align: middle;
 
 }
 
-.m-ctr .his-content .uncheck .text {
+ .his-content .uncheck .text {
   color: #aaa;
 }

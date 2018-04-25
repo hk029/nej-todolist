@@ -1,0 +1,12 @@
+.m-ctr {
+  margin-top:10px;
+  overflow: scroll;
+  padding-bottom: 20px;
+}
+.m-ctr h3 {
+  padding:0 0 20px; 
+  font-size: 20px;
+  line-height: 30px;
+  color:#253b6a;
+  text-align: center;
+}

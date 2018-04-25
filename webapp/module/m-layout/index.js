@@ -10,8 +10,9 @@ NEJ.define([
   'base/element',
   'util/template/tpl',
   'util/dispatcher/module',
-  'mypro/module/module'
-],function(_k,_e,_t0,_t1,_m,_p,_o,_f,_r){
+  'mypro/module/module',
+  'util/chain/NodeList'
+],function(_k,_e,_t0,_t1,_m,$,_p,_o,_f,_r){
   // variable declaration
   var _pro;
   /**
@@ -48,6 +49,12 @@ NEJ.define([
       //     parent:_list[1]
       };
   };
+
+  _pro.__onShow = function (_options) {
+    this.__super(_options); 
+      console.log($('.m-ctr'))
+      $('.m-ctr')._$style('height',document.body.clientHeight - 154 + 'px');
+  }
   // notify dispatcher
   _t1._$regist('layout-system',_p._$$ModuleLayoutSystem);
 });

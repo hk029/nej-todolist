@@ -59,12 +59,13 @@ NEJ.define([
                 } else {
                     this.__data.tasklist.push(this.__data.tasklist.splice(pos, 1)[0]);
                 }
+                this.__events.onrefresh(this.__data);
             }
         } else { //没提供options  说明是删除任务
             this.__data.tasklist.splice(pos, 1);
+            this.__events.onrefresh(this.__data);
         }
         // 更新页面
-        this.__events.onrefresh(this.__data);
         // 把修改同步到loalstorage
         _s._set('tasklist', this.__data);
     }
@@ -109,8 +110,14 @@ NEJ.define([
         // 处理点击事件
 
         $('body')._$on('click', function (_e) {
+            _e.stopPropagation();
+            // window.event? window.event.cancelBubble = true : _e.stopPropagation();
+            if((+new Date()) - that.__curTime < 300){
+                return;
+            }
             console.log(_e)
             var _target = $(_e.target);
+            console.log(_target);
             var no = _target._$parent()._$attr('no');
             var edit = that.__curEdit;
             // 说明之前有编辑的内容
@@ -137,11 +144,11 @@ NEJ.define([
             } else if (_target[0].tagName === 'INPUT' && _target[0].className === 'text') {
                 // 表示当前位置正在编辑
                 that.__curEdit = no;
+                that.__curTime = +Date();
                 // 把输入框内文字全选中
                 if(_target._$val() === '新建事项（单击编辑）'){
                     _target._$val('');
                 }
-                console.log(_target);
                 // _target[0].onfocus();
                 _target[0].selectionStart = 0;
                 _target[0].selectionEnd = _target._$val().length;
