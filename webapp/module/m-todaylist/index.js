@@ -115,6 +115,7 @@ NEJ.define([
             if((+new Date()) - that.__curTime < 300){
                 return;
             }
+            that.__curTime = +new Date();
             console.log(_e)
             var _target = $(_e.target);
             console.log(_target);
@@ -144,7 +145,6 @@ NEJ.define([
             } else if (_target[0].tagName === 'INPUT' && _target[0].className === 'text') {
                 // 表示当前位置正在编辑
                 that.__curEdit = no;
-                that.__curTime = +Date();
                 // 把输入框内文字全选中
                 // if(_target._$val() === '新建事项（单击编辑）'){
                 //     _target._$val('');
@@ -173,6 +173,7 @@ NEJ.define([
         this.__super(_options);
         // 根据数据刷新内容
         if (_options.tasklist) {
+            _options.width = document.body.clientWidth - 140;
             var _html = _j._$get('task-template', _options);
             $(this.__list)._$html(_html);
         }
