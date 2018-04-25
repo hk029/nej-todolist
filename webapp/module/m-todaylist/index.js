@@ -107,7 +107,7 @@ NEJ.define([
         } else {
             this.__data = {
                 version:this.__curversion,
-                date:'2018-04-03',
+                date:this.__curdate,
                 tasklist: [{
                         taskname: '单击标题编辑',
                         done: 0
