@@ -146,9 +146,9 @@ NEJ.define([
                 that.__curEdit = no;
                 that.__curTime = +Date();
                 // 把输入框内文字全选中
-                if(_target._$val() === '新建事项（单击编辑）'){
-                    _target._$val('');
-                }
+                // if(_target._$val() === '新建事项（单击编辑）'){
+                //     _target._$val('');
+                // }
                 // _target[0].onfocus();
                 _target[0].selectionStart = 0;
                 _target[0].selectionEnd = _target._$val().length;
