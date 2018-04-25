@@ -27,11 +27,15 @@ NEJ.define([
             _t0._$getTextTemplate('module-id-history')
         );
         // 添加模板
-        console.log('his build')
+        this.__curversion = 1003;
         _j._$add('his-template');
         // 看localStroage里有没有数据
         this.__curEdit = -1;
         this.__hisdata = _s._get('hislist');
+        if(!this.__hisdata || !this.__hisdata.version || this.__hisdata.version < this.__curversion){
+            // 说明数据版本过老
+            this.__hisdata = null;
+        }
     };
 
     /**
@@ -61,7 +65,8 @@ NEJ.define([
         } else {
             this.__hisdata = {
                 hislist: [{
-                    date: '2018-04-25',
+                    date: '2018-04-20',
+                    version: this.__curversion,
                     tasks: [{
                             taskname: '收拾行李',
                             done: 1
@@ -76,7 +81,7 @@ NEJ.define([
                         }
                     ]
                 },{
-                date: '2018-04-24',
+                date: '2018-04-19',
                     tasks: [{
                             taskname: '买菜',
                             done: 0

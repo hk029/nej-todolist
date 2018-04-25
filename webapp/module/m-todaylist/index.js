@@ -6,8 +6,9 @@ NEJ.define([
     'util/dispatcher/module',
     'mypro/module/module',
     'util/chain/NodeList',
-    'mypro/stroage'
-], function (_k, _e, _t0, _j, _t1, _m, $, _s, _p, _o, _f, _r) {
+    'mypro/stroage',
+    'base/util'
+], function (_k, _e, _t0, _j, _t1, _m, $, _s, _u,_p, _o, _f, _r) {
     // variable declaration
     var _pro;
     /**
@@ -26,7 +27,8 @@ NEJ.define([
         this.__body = _e._$html2node(
             _t0._$getTextTemplate('module-id-today')
         );
-        this.__curversion = 1001;
+        this.__curversion = 1003;
+        this.__curdate =_u._$format(new Date(),'yyyy-MM-dd');
         console.log('today build')
         // 添加模板
         _j._$add('task-template');
@@ -37,7 +39,19 @@ NEJ.define([
         if(!this.__data || !this.__data.version || this.__data.version < this.__curversion){
             // 说明数据版本过老
             this.__data = null;
+        // 判断当前数据是否已经过期了，过期了要放入历史数据
+        } else if(this.__data.date !== this.__curdate){
+                var his = _s._get('hislist');
+                if(his){
+                    his.hislist.unshift({date:this.__data.date,tasks:this.__data.tasklist})
+                }else{
+                    his = {hislist:[{date:this.__data.date,tasks:this.__data.tasklist}],version:this.__curversion};
+                }
+                _s._set('hislist',his);
+                this.__data = {version:this.__curversion,date:this.__curdate,tasklist:[]};
+            
         }
+        
     };
 
     /**
@@ -93,6 +107,7 @@ NEJ.define([
         } else {
             this.__data = {
                 version:this.__curversion,
+                date:'2018-04-03',
                 tasklist: [{
                         taskname: '单击标题编辑',
                         done: 0
