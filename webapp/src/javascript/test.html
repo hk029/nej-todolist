@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="./lib/nej/define.js"></script>
+  <script>
+    NEJ.define(['./stroage.js'], function (_s) {
+      var stroage = window.localStorage;
+      console.log('set 111 222')
+      _s._set('111',{a:1});
+      _s._set('222','_set 222');
+      console.log('get 111',_s._get('111'));
+      stroage.setItem('111','local set 111');
+      _s._forEach((key,val)=>console.log(key+':'+val));
+      console.log(stroage.getItem('111'));
+
+      console.log('clear')
+      _s._clear();
+      _s._forEach((key,val)=>console.log(key+':'+val));
+      console.log(stroage.getItem('111'));
+
+      console.log('set 111 222')
+      _s._set('111','_set 111');
+      _s._set('222','_set 222');
+      _s._forEach((key,val)=>console.log(key+':'+val));
+
+      console.log('remove 111')
+      _s._remove('111');
+      _s._forEach((key,val)=>console.log(key+':'+val));
+
+    });
+  </script>
+</body>
+
+</html>

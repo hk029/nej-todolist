@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/reset.css">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="utf-8" />
+  <title>Easy.To.Do - voidsky</title>
+  <!-- @STYLE -->
+  <link href="../css/reset.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body id="www-wd-com">
+  <div id="md-box"></div>
+
+  <!-- <div class="g-doc">
+      <div class="g-hd">
+        <h1 class="m-logo">网易-杭研院-前端技术组-实例库</h1>
+        <h2 class="m-title">NEJ Module Sample</h2>
+      </div>
+      <div class="g-bd">
+        <div class="m-foot">
+        	如有任何问题，请联系：蔡剑飞(<a href="mailto:caijf@corp.netease.com">caijf@corp.netease.com</a>)
+        </div>
+      </div>
+      <div class="g-ft">
+        <div class="m-foot">
+        	&nbsp;&copy;&nbsp;网易-杭研院-前端技术组
+        </div>
+      </div>
+    </div> -->
+
+
+  <!-- @VERSION -->
+  <script>
+    location.config = {
+      root: './'
+    };
+  </script>
+  <script>
+    window.NEJ_CONF = {
+      root: '../res/'
+    };
+  </script>
+  <!-- @SCRIPT -->
+  <!-- <script src="http://10.240.155.78:8020/NEJ/src/define.js"></script> -->
+  <script src="../javascript/lib/nej/define.js"></script>
+  <script>
+    NEJ.define([
+      'util/dispatcher/dispatcher'
+    ], function (_t) {
+      /* start up dispatcher */
+      _t._$startup({
+        rules: {
+          rewrite: {
+            '404': '/m/today/',
+            //   '/m/blog/list/':'/m/blog/',
+            //   '/m/setting/account/':'/m/setting/'
+          },
+          title: {
+            //   '/m/blog/tag/':'日志标签',
+            //   '/m/blog/list/':'日志列表',
+            //   '/m/setting/permission/':'权限管理',
+            //   '/m/setting/account/':'基本资料',
+            //   '/m/setting/account/edu/':'教育经历'
+          },
+          alias: {
+            //   'system-tab':'/?/tab/',
+            //   'blog-tab':'/?/blog/tab/',
+            //   'blog-list-box':'/?/blog/box/',
+            //   'blog-list-tag':'/?/blog/tag/',
+            //   'blog-list':'/?/blog/list/',
+            //   'setting-tab':'/?/setting/tab/',
+            //   'setting-account-tab':'/?/setting/account/tab/',
+            'layout-top': '/?/top/',
+            'layout-hislist': '/m/history/',
+            'layout-remainder': '/m/remainder/',
+            'layout-profile': '/m/profile/',
+            'layout-btm': '/?/btm/',
+            'layout-todaylist': '/m/today/',
+            'layout-system': '/m',
+
+            //   'layout-blog':'/m/blog',
+            //   'layout-blog-list':'/m/blog/list/',
+            //   'layout-setting':'/m/setting',
+            //   'layout-setting-account':'/m/setting/account',
+
+            //   'blog-tag':['/m/blog/tag/','/m/setting/tag/'],
+            //   'setting-edu':'/m/setting/account/edu/',
+            //   'setting-profile':'/m/setting/account/',
+            //   'setting-permission':'/m/setting/permission/'
+          }
+        },
+        modules: {
+          '/?/top/': 'm-top/index.html',
+          '/?/btm/': 'm-btm/index.html',
+          //   '/?/tab/':'module/tab/index.html',
+          //   '/?/blog/tab/':'module/blog/tab/index.html',
+          //   '/?/blog/box/':'module/blog/list.box/index.html',
+          //   '/?/blog/tag/':'module/blog/list.tag/index.html',
+          //   '/?/blog/list/':'module/blog/list/index.html',
+          //   '/?/setting/tab/':'module/setting/tab/index.html',
+          //   '/?/setting/account/tab/':'module/setting/account.tab/index.html',
+
+          '/m': {
+            module: 'm-layout/index.html',
+            composite: {
+              top: '/?/top/',
+              btm: '/?/btm/'
+            }
+          },
+          '/m/history/': 'm-historylist/index.html',
+          '/m/today/': 'm-todaylist/index.html',
+          '/m/remainder/': 'm-remainder/index.html',
+          '/m/profile/': 'm-profile/index.html',
+        },
+        onbeforechange: function (_options) {
+          // debugger
+          var _umi = _options.path || '';
+          if (!!_umi &&
+            _umi.indexOf('/?') < 0 &&
+            _umi.indexOf('/m') < 0)
+            _options.path = '/m' + _umi;
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="test-id-0"></div>
+  <div id="template-box" style="display:none;">
+    <textarea name="html" data-src="./index.html"></textarea>
+  </div>
+  <script src="../../javascript/lib/nej/define.js"></script>
+  <script>
+    define(['util/dispatcher/test'],
+    function(_t){
+        document.mbody = 'test-id-0';
+        // test module
+        _t._$testByTemplate('template-box');
+    });
+  </script>
+</body>
+</html>
