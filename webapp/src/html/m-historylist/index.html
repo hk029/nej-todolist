@@ -18,8 +18,8 @@
       <li class="task {if x.done} checked {else} uncheck{/if}" no="${i=i+1}">
         <!-- <span> -->
         {if x.done}
-        <img src="../../../res/img/hk_right.svg" alt="" class="checkico"> {else}
-        <img src="../../../res/img/wrong.svg" alt="" class="checkico"> {/if}
+        <img src="/res/img/hk_right.svg" alt="" class="checkico"> {else}
+        <img src="/res/img/wrong.svg" alt="" class="checkico"> {/if}
         <!-- </span> -->
         <span class="text">
           ${x.taskname}
@@ -29,7 +29,6 @@
     </ul>
       {/list}
     {else} 暂无待办事项 {/if} {/if}
-  </textarea>
 </textarea>
 <!-- @TEMPLATE -->
 <textarea name="css" data-src="./index.css"></textarea>

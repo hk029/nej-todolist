@@ -1,10 +1,31 @@
-<meta charset="utf-8"/>
+<meta charset="utf-8" />
 <textarea id="module-id-history" name="txt">
 <div class="m-ctr">
-<h3>历史工作单</h3>
-<div class="content" id="his-content">
+<h3>历史完成情况</h3>
+<div class="his-content" id="his-content">
 </div>
 </div>
+<textarea name="jst" id="his-template">
+{if defined("hislist")} {if hislist&&hislist.length}
+{list hislist as h}
+<h4 class="date">
+${h.date}
+</h4>
+<ul id="task-list">
+{var i = -1}
+{list h.tasks as x}
+<li class="task {if x.done} checked {else} uncheck{/if}" no="${i=i+1}">
+{if x.done}
+<img src="/res/img/hk_right.svg" alt="" class="checkico"> {else}
+<img src="/res/img/wrong.svg" alt="" class="checkico"> {/if}
+<span class="text">
+${x.taskname}
+</span>
+</li>
+{/list}
+</ul>
+{/list}
+{else} 暂无待办事项 {/if} {/if}
 </textarea>
-<textarea name="css">.m-ctr{margin-top:70px;background:white;}.m-ctr h3{padding:10px 30px;font-size:18px;line-height:30px;color:#253b6a;}.m-ctr .content{padding:0px 30px;}.m-ctr .content ul{list-style:none;}.m-ctr .content li{margin:30px 0;}.m-ctr .content li .text{padding:2px 2px;border:none;border-bottom:1px dashed #aaa;font-size:16px;margin-left:10px;width:180px;color:#666;outline-color:#55a8c3;}.m-ctr .content img{width:30px;vertical-align:middle;}.m-ctr .content .checked .text{color:#aaa;text-decoration:line-through;}</textarea>
-<textarea name="js" data-src="../tp_m-historylist_index.js?2d88c9be680e4e10694ad5e3a2fb80da"></textarea>
+<textarea name="css">.m-ctr{margin-top:70px;background:white;}.m-ctr h3{padding:0 0 20px;font-size:18px;line-height:30px;color:#253b6a;text-align:center;}.m-ctr .his-content h4{border-bottom:1px dashed #aaa;padding-bottom:10px;font-size:12px;color:#333;}.m-ctr .his-content{padding:0px 30px;}.m-ctr .his-content ul{list-style:none;margin-bottom:30px;}.m-ctr .his-content li{margin:10px 0;}.m-ctr .his-content li .text{padding:2px 2px;border:none;font-size:14px;margin-left:10px;width:180px;color:#666;outline-color:#55a8c3;}.m-ctr .his-content img{width:14px;vertical-align:middle;}.m-ctr .his-content .uncheck .text{color:#aaa;}</textarea>
+<textarea name="js" data-src="../tp_m-historylist_index.js?de1ac3630b6d0bc2fb17b2cf79c4fda8"></textarea>

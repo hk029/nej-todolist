@@ -46,30 +46,30 @@
   width: 50px;
   left: 15px;
   top: -35px;
-  background: url(../../../res/img/add.svg)  no-repeat;
+  background: url(/res/img/add.svg)  no-repeat;
   background-size:100%;
   -moz-background-size:100%;
 }
 
 .m-btm ul .list-btn {
-  background: url(../../../res/img/list.svg) no-repeat 0 15px;
+  background: url(/res/img/list.svg) no-repeat 0 15px;
   background-size:100%;
   -moz-background-size:100%;
 }
 
 .m-btm ul .his-btn {
-  background: url(../../../res/img/history.svg) no-repeat 0 15px;
+  background: url(/res/img/history.svg) no-repeat 0 15px;
   background-size:100%;
   -moz-background-size:100%;
 }
 .m-btm ul .prof-btn {
-  background: url(../../../res/img/prof.svg) no-repeat 0 15px;
+  background: url(/res/img/prof.svg) no-repeat 0 15px;
   background-size:100%;
   -moz-background-size:100%;
 }
 
 .m-btm ul .ring-btn {
-  background: url(../../../res/img/ring.svg) no-repeat 0 15px;
+  background: url(/res/img/ring.svg) no-repeat 0 15px;
   background-size:100%;
   -moz-background-size:100%;
 }
