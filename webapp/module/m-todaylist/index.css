@@ -18,8 +18,8 @@
   font-size: 18px;
   margin-left: 10px;
   width: 220px;
-  text-overflow: ellipsis;
-  overflow: hidden;
+  /* text-overflow: ellipsis; */
+  /* overflow: hidden; */
   color:#666;
   outline-color:#55a8c3;
 }

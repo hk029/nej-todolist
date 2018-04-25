@@ -26,12 +26,18 @@ NEJ.define([
         this.__body = _e._$html2node(
             _t0._$getTextTemplate('module-id-today')
         );
+        this.__curversion = 1001;
         console.log('today build')
         // 添加模板
         _j._$add('task-template');
         // 看localStroage里有没有数据
         this.__curEdit = -1;
         this.__data = _s._get('tasklist');
+
+        if(!this.__data || !this.__data.version || this.__data.version < this.__curversion){
+            // 说明数据版本过老
+            this.__data = null;
+        }
     };
 
     /**
@@ -86,12 +92,17 @@ NEJ.define([
             this.__events.onrefresh(this.__data);
         } else {
             this.__data = {
+                version:this.__curversion,
                 tasklist: [{
                         taskname: '单击标题编辑',
                         done: 0
                     },
                     {
                         taskname: '清空标题，删除事项',
+                        done: 0
+                    },
+                    {
+                        taskname: '很长的文字可以左右滑动查看，滑动我！滑动我！滑动我！滑动我！滑动我！滑动我！你真棒',
                         done: 0
                     },
                     {
