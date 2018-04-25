@@ -5,14 +5,14 @@
 
 .m-ctr h3 {
   padding:0 0 20px; 
-  font-size: 18px;
+  font-size: 20px;
   line-height: 30px;
   color:#253b6a;
   text-align: center;
 }
 
 .m-ctr .content {
-  padding: 0px 30px;
+  padding: 0px 40px;
 }
 
 .m-ctr .content ul {
@@ -20,14 +20,14 @@
 }
 
 .m-ctr .content li {
-  margin: 20px 0;
+  margin: 30px 0;
 }
 
 .m-ctr .content li .text {
   padding: 2px 2px;
   border: none;
   border-bottom: 1px dashed #aaa;
-  font-size: 16px;
+  font-size: 18px;
   margin-left: 10px;
   width: 180px;
   color:#666;
@@ -35,7 +35,7 @@
 }
 
 .m-ctr .content img {
-  width: 20px;
+  width: 30px;
   vertical-align: middle;
 
 }

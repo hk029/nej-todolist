@@ -43,18 +43,18 @@
 
 .m-btm ul .add-btn {
   position: absolute;
-  width: 50px;
+  width: 60px;
   left: 15px;
-  top: -40px;
-  background: url(/res/img/add.svg)  no-repeat;
+  top: -45px;
+  /* background: url(/res/img/add.svg)  no-repeat;
   background-size:100%;
-  -moz-background-size:100%;
+  -moz-background-size:100%; */
 }
 
 .m-btm ul .list-btn {
-  background: url(/res/img/list.svg) no-repeat 0 15px;
+  /* background: url(/res/img/list.svg) no-repeat 0 15px;
   background-size:100%;
-  -moz-background-size:100%;
+  -moz-background-size:100%; */
 }
 
 /* .m-btm ul .his-btn {

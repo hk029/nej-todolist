@@ -25,8 +25,14 @@
     };
   </script>
   <!-- @SCRIPT -->
+  <script src='./javascript/lib/faskclick.js'></script>
   <script src="./javascript/lib/nej/define.js"></script>
   <script>
+    if ('addEventListener' in document) {
+      document.addEventListener('DOMContentLoaded', function() {
+          FastClick.attach(document.body);
+      }, false);
+    }
     NEJ.define([
       'util/dispatcher/dispatcher'
     ], function (_t) {

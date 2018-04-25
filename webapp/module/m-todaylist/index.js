@@ -108,7 +108,7 @@ NEJ.define([
         }
         // 处理点击事件
 
-        $('body')._$on('touchstart', function (_e) {
+        $('body')._$on('click', function (_e) {
             console.log(_e)
             var _target = $(_e.target);
             var no = _target._$parent()._$attr('no');
@@ -134,23 +134,18 @@ NEJ.define([
                 that.__changeList(no, {
                     done: !done
                 });
-                // that.__data.tasklist[no].done = !done;
-                // var del = that.__data.tasklist.splice(no, 1)[0];
-                // // 根据状态选择插入开头或结尾
-                // if (done) {
-                //     that.__data.tasklist.unshift(del);
-                // } else {
-                //     that.__data.tasklist.push(del);
-                // }
-                // // 刷新列表
-                // that.__events.onrefresh(that.__data);
-
             } else if (_target[0].tagName === 'INPUT' && _target[0].className === 'text') {
                 // 表示当前位置正在编辑
                 that.__curEdit = no;
                 // 把输入框内文字全选中
+                if(_target._$val() === '新建事项（单击编辑）'){
+                    _target._$val('');
+                }
+                console.log(_target);
+                // _target[0].onfocus();
                 _target[0].selectionStart = 0;
                 _target[0].selectionEnd = _target._$val().length;
+
             } else {
 
             }
