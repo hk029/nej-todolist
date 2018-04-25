@@ -22,7 +22,7 @@ NEJ.define([
     */
    _pro.__doBuild = function(){
        this.__body = _e._$html2node(
-           _t0._$getTextTemplate('module-id-remainder')
+           _t0._$getTextTemplate('module-id-reminder')
        );
        // 0 - tab box
        // 1 - module box
@@ -68,5 +68,5 @@ NEJ.define([
         // TODO
     };
    // notify dispatcher
-   _t1._$regist('layout-remainder',_p._$$ModuleLayoutSystem);
+   _t1._$regist('layout-reminder',_p._$$ModuleLayoutSystem);
 });

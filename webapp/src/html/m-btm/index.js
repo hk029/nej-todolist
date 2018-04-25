@@ -24,31 +24,37 @@ NEJ.define([
         this.__body = _e._$html2node(
             _t0._$getTextTemplate('module-id-3')
         );
+
     };
 
     _pro.__onShow = function (_options) {
         this.__super(_options);
         // 处理事件
         var btns = $('#btm-btns');
-        console.log(btns)
-        // $(btns)._$click(function (_e) {
-        //     console.log(_e);
-        // })
         var items = $('.item');
         var that = this;
+        // 对根据点击的按钮更改选中状态
+        console.log(_options);
+        var path = _options.input.location.href.replace(/\//g,'');
+        // 根据path添加高亮状态
+        addHl($('.'+path));
         btns._$on('click', function (e) {
+            // 如果点击的不是添加按钮
             if (!$(e.target)._$hasClassName('add-btn')) {
-                for (var i = 0; i < items.length; i++) {
-                    $(items[i])._$delClassName('hl');
-                }
-                $(e.target)._$parent()._$parent()._$addClassName('hl');
-            } else {
+                addHl($(e.target)._$parent()._$parent());
+            } else {  // 发送添加信息
+                var curlocation = location.hash.replace('#','');
                 that.__doSendMessage(
-                    '/m/today/',{type:'add'}
+                    '/m'+curlocation,{type:'add'}
                 );
-
             }
-        })
+        });
+        function addHl(target){
+            for (var i = 0; i < items.length; i++) {
+                $(items[i])._$delClassName('hl');
+            }
+            target._$addClassName('hl');
+        }
     }
 
     // notify dispatcher
