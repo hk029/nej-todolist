@@ -1,0 +1,101 @@
+.m-btm {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(-135deg,#7085DD 0%,#4BB5B8 100%);
+  height: 64px;
+}
+
+.m-btm .ico {
+  height: 60px;
+  width: 30px;
+  display: inline-block;
+}
+
+.m-btm .ico img {
+  width: 30px;
+  vertical-align: middle;
+}
+
+.m-btm ul {
+  list-style: none;
+  position: relative;
+  height: 100%;
+}
+
+
+.m-btm ul .item {
+  float: left;
+  /* display: inline-block; */
+  width: 20%;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  position: relative;
+  text-align: center;
+}
+
+
+.m-btm ul .item.hl {
+  border-bottom: 4px solid #fff;
+}
+
+.m-btm ul .add-btn {
+  position: absolute;
+  width: 50px;
+  left: 15px;
+  top: -40px;
+  background: url(/res/img/add.svg)  no-repeat;
+  background-size:100%;
+  -moz-background-size:100%;
+}
+
+.m-btm ul .list-btn {
+  background: url(/res/img/list.svg) no-repeat 0 15px;
+  background-size:100%;
+  -moz-background-size:100%;
+}
+
+/* .m-btm ul .his-btn {
+  background: url(/res/img/history.svg) no-repeat 0 15px;
+  background-size:100%;
+  -moz-background-size:100%;
+}
+.m-btm ul .prof-btn {
+  background: url(/res/img/prof.svg) no-repeat 0 15px;
+  background-size:100%;
+  -moz-background-size:100%;
+}
+
+.m-btm ul .ring-btn {
+  background: url(/res/img/ring.svg) no-repeat 0 15px;
+  background-size:100%;
+  -moz-background-size:100%;
+} */
+.m-btm ul .add-btn img {
+  width: 80px;
+}
+
+.m-btm .fr {
+  float: right;
+}
+
+
+.panel{
+  position: absolute;
+  border: 1px solid #7085DD;
+  padding:20px;
+  background: #fff;
+  border-radius: 4px;
+}
+.panel ul{
+  list-style: none;
+  vertical-align: top;
+}
+.panel ul li{
+  margin-top:10px;
+}
+.panel ul li span{
+  vertical-align: top;
+}

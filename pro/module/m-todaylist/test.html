@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Document</title>
+</head>
+<body>
+<div id="test-id-0"></div>
+<div id="template-box" style="display:none;">
+<meta charset="utf-8"/>
+<textarea id="module-id-today" name="txt">
+<div class="m-ctr">
+<h3>今日待办事项</h3>
+<div class="content" id="task-content">
+</div>
+</div>
+</textarea>
+<textarea id="task-template" name="jst">
+{if defined("tasklist")}
+{if tasklist&&tasklist.length}
+<ul id="task-list">
+{var i = -1}
+{list tasklist as x}
+<li class="task {if x.done} checked {else} unchecked{/if}" no="${i=i+1}">
+{if x.done}
+<img src="/res/img/checked.svg" alt="" class="checkico">
+{else}
+<img src="/res/img/uncheck.svg" alt="" class="checkico">
+{/if}
+<input type="text" class="text" value="${x.taskname}">
+</li>
+{/list}
+</ul>
+{else}
+暂无待办事项
+{/if}
+{/if}
+</textarea>
+<textarea name="css">.m-ctr{margin-top:70px;background:white;}.m-ctr h3{padding:0 0 20px;font-size:18px;line-height:30px;color:#253b6a;text-align:center;}.m-ctr .content{padding:0px 30px;}.m-ctr .content ul{list-style:none;}.m-ctr .content li{margin:20px 0;}.m-ctr .content li .text{padding:2px 2px;border:none;border-bottom:1px dashed #aaa;font-size:16px;margin-left:10px;width:180px;color:#666;outline-color:#55a8c3;}.m-ctr .content img{width:20px;vertical-align:middle;}.m-ctr .content .checked .text{color:#aaa;text-decoration:line-through;}</textarea>
+<textarea name="js" data-src="../../res/tp_module_m-todaylist_index.js?d0e5a41733fa7b3d6bd85171fd94ffdd"></textarea>
+</div>
+<script src="../../res/core.js?c83326c601333a0c85774014deaea1dc"></script>
+<script src="../../res/pp_module_m-todaylist_test.js?77a7d6875b1f1f6037c6c8006c232c3a"></script>
+</body>
+</html>

@@ -4,8 +4,13 @@
   "description": "",
   "main": "cli.js",
   "scripts": {
+    "start": "node cli.js",
+    "build": "nej build ./deploy/release.conf && node cli pro/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "voidsky",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
