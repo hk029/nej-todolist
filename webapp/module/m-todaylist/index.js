@@ -108,7 +108,8 @@ NEJ.define([
         }
         // 处理点击事件
 
-        $('body')._$on('click', function (_e) {
+        $('body')._$on('touchstart', function (_e) {
+            console.log(_e)
             var _target = $(_e.target);
             var no = _target._$parent()._$attr('no');
             var edit = that.__curEdit;
