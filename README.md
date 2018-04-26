@@ -85,6 +85,78 @@ npm run build
 ## NEJ相关学习
 
 ### define
+`NEJ.define()`是NEJ定义的异步加载模块的方式，和传统的AMD方式类似，它可以方便的管理模块和它们之间的依赖关系，由于NEJ相关的模块都是得通过这种方式加载的，因此**这个define.js文件是最重要**的，需要最先引入。
+
+相关介绍可以参考[NEJ依赖管理系统](https://github.com/genify/nej/blob/master/doc/DEPENDENCY.md)
+
+另可以看[nej/define.js](https://github.com/genify/nej/blob/master/src/define.js) 源文件，上面有较多的注释，其中有几个关键的的点：
+
+#### 使用方法
+引入nej.js或者define.js
+```
+<script src="/path/to/nej/define.js"></script>
+或
+<script src="/path/to/nej/nes.js"></script>
+```
+然后通过NEJ.define使用,其中第一个参数是需要引入的模块**数组**, 第二个参数是回调函数，参数依次是引入的模块对象，后面4个`p,o,f,r`是四个额外变量,文档中有提及，其中**最重要的是p**，这个参数在自己定义模块的时候，用来扩展自己的模块。
+```
+NEJ.define([
+   'base/klass',
+   'base/element'
+],function(_k,_e,_p,_o,_f,_r){
+
+})
+```
+
+#### 模块路径
+模块路径除了使用相对路径，绝对路径外，还可以配置指定前缀在引入define.js文件的时候可以制定参数路径。如下就是配置了变量A前缀指向../web/js/
+```
+<script src="/path/to/nej/define.js?A=../web/js/"></script>
+```
+则文件定义时可以直接使用A或者”{A}”来表示A指定的路径前缀,**其中使用`{}`方式，末尾要标名文件类型**
+```
+NEJ.definAe([
+    'A/api/util',
+    '{A}api/util.js'
+……
+```
+
+#### 创建模块
+每个模块文件只能定义一个模块，使用一次NEJ.define，源代码中说明了下面三种方式：
+```javascript
+ // 依赖base/global和base/util
+ NEJ.define([
+    'base/global',
+    'base/util'
+ ],function(NEJ,u,p,o,f,r){
+     return p;
+ });
+```
+```javascript
+ // 不依赖其他文件，等价于直接执行
+ NEJ.define(function(p,o,f,r){
+     // TODO something
+     return p;
+ });
+```
+```javascript
+ // 仅用于引入依赖文件列表而不执行业务逻辑
+ NEJ.define(['base/global']);
+```
+需要在模块中添加的方法，就直接添加在p上就行了
+```javascript
+NEJ.define(function(p,o,f,r){
+     p._doSth = function(){
+     }
+     return p;
+ });
+```
+
+#### 模块依赖
+- 避免出现强依赖
+- 基本如果是使用NEJ.define方式定义的模块（如下）都需要额外通过配置定义依赖关系
+- 如果是非AMD规范的第三方库如需引入依赖管理，通过NEJ.deps()定义依赖关系，详细看[NEJ依赖管理系统](https://github.com/genify/nej/blob/master/doc/DEPENDENCY.md)
+
 
 ### 模块化开发
 
