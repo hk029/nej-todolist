@@ -20,15 +20,17 @@
 
 - 每日事务管理（增加，修改，删除，标记完成）
 - 待办事项本地存储
-- 待办事务查询（待做
-- 历史完成情况
-- 提醒事项
+- 自动生成历史完成情况（当日完成情况过期后会自动进入历史完成情况）
+- 待办事务查询（待做)
+- 提醒事项（待做）
 
 
 
 主要特点：
 
 - 基于NEJ（方便熟悉NEJ）
+- 数据本地存储
+- 简化操作流程
 - 使用模块化开发（方便了解NEJ模块加载）
 - 使用了JST模板
 - 按需加载（反正都是NEJ提供的）
@@ -39,22 +41,48 @@
 
 
 ## 使用方法
-
-直接静态运行webapp/src/html/app.html 即可，配合NEJ打包工具食用味道更佳。
-
+直接运行命令：
 ```
-npm install nej
+npm install
+npm start
 ```
-
-然后在当前目录运行nej的build指令，在/webapp/pro/下生成打包后的文件
-
+如果要进行发布构建运行命令：（前提已经安装的nej,如果没有安装nej请使用命令npm install nej安装）
 ```
-nej build ./deploy/release.conf
+npm run build
 ```
+会自动在pro目录下生成构建完成的文件，文件可以直接丢到服务器上运行
 
+## 项目说明
+目录结构如下：
+├── deploy ：部署相关的配置文件
+├── node_modules 
+├── photos
+├── pro ：部署后生成文件
+├── res
+│   └── img
+└── webapp ：源文件目录
+    ├── css
+    ├── javascript
+    │   └── lib
+    │       └── nej ：nej框架
+    ├── module ：模块文件
+    │   ├── m-btm
+    │   ├── m-historylist
+    │   ├── m-layout
+    │   ├── m-profile
+    │   ├── m-reminder
+    │   └── m-todaylist
+    ├── index.html ：项目入口
+    └── res
+        └── img
+    
+
+所有的修改都在webapp下，可以修改index.html增加模块，模块内容全在module文件夹下，模块的相关说明参考[NEJ相关学习](./#nej相关学习)
 
 
 ## NEJ相关学习
 
-- define
+### define
+
+### 模块化开发
 
