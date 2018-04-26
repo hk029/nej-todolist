@@ -1,5 +1,10 @@
 # NEJ-Easy.To.Do
 
+## 体验
+可以手机访问（PC端请打开手机模拟）：[点此跳转](http://easyread.top:5050/#/today/)
+或者扫二维码体验一下：
+![](./photos/1524713508.png)
+
 ## 预览
 
 ![image-20180425103750007](./photos/preview1.jpg)
