@@ -53,7 +53,10 @@ npm run build
 会自动在pro目录下生成构建完成的文件，文件可以直接丢到服务器上运行
 
 ## 项目说明
+
 目录结构如下：
+
+```
 ├── deploy ：部署相关的配置文件
 ├── node_modules 
 ├── photos
@@ -75,10 +78,9 @@ npm run build
     ├── index.html ：项目入口
     └── res
         └── img
-    
+```
 
-所有的修改都在webapp下，可以修改index.html增加模块，模块内容全在module文件夹下，模块的相关说明参考[NEJ相关学习](./#nej相关学习)
-
+所有的修改都在webapp下，可以修改index.html增加模块，模块内容全在module文件夹下，模块的相关说明参考[NEJ相关学习](#nej相关学习)
 
 ## NEJ相关学习
 
