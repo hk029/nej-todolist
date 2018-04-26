@@ -1,6 +1,9 @@
 # NEJ-Easy.To.Do
 
-![image-20180425103750007](../../../../../../var/folders/0d/sph_n2vx1dg_4mk8q7zh7mdm0000gn/T/abnerworks.Typora/image-20180425103750007.png)
+## 预览
+
+![image-20180425103750007](./photos/preview1.jpg)
+![image-20180425103750007](./photos/preview2.jpg)
 
 ## 介绍
 
