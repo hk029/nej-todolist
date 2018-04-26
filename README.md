@@ -85,7 +85,7 @@ npm run build
 ## NEJ相关学习
 
 ### define
-`NEJ.define()`是NEJ定义的异步加载模块的方式，和传统的AMD方式类似，它可以方便的管理模块和它们之间的依赖关系，由于NEJ相关的模块都是得通过这种方式加载的，因此**这个define.js文件是最重要**的，需要最先引入。
+`NEJ.define()`是NEJ定义的异步加载模块的方式，和传统的[AMD](https://github.com/amdjs/amdjs-api/blob/master/AMD.md)方式类似，它可以方便的管理模块和它们之间的依赖关系，由于NEJ相关的模块都是得通过这种方式加载的，因此**这个define.js文件是最重要**的，需要最先引入。
 
 相关介绍可以参考[NEJ依赖管理系统](https://github.com/genify/nej/blob/master/doc/DEPENDENCY.md)
 
@@ -121,7 +121,10 @@ NEJ.definAe([
 ……
 ```
 
-#### 创建模块
+#### 常用模块
+如果是控件，可以根据名字去`util/`目录下翻
+
+#### 自定义模块
 每个模块文件只能定义一个模块，使用一次NEJ.define，源代码中说明了下面三种方式：
 ```javascript
  // 依赖base/global和base/util
@@ -159,4 +162,11 @@ NEJ.define(function(p,o,f,r){
 
 
 ### 模块化开发
+
+关于这一方面，文档写的很长，看着有点绕，要深入了解可以仔细阅读，一般来说使用模块无外乎需要知道以下几点：
+- 模块如何定义
+- 模块如何渲染使用
+- 模块间如何通信
+
+
 
