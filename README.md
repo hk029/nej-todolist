@@ -183,15 +183,14 @@ m-todaylist
 ├── index.js
 └── index.html
 ```
-其中css文件按照普通方式书写，html中模板的内容通过<textarea></textarea>包装(具体格式参考:[模板系统](https://github.com/genify/nej/blob/master/doc/TEMPLATE.md))并给出特定的ID标识。然后引入样式和逻辑，所以一个模板大概是下面这个样子：
+其中css文件按照普通方式书写，html中模板的内容通过`<textarea></textarea>`包装(具体格式参考:[模板系统](https://github.com/genify/nej/blob/master/doc/TEMPLATE.md))并给出特定的ID标识。然后引入样式和逻辑，所以一个模板大概是下面这个样子：
 ```javascript
 <meta charset="utf-8"/>
-<textarea name="txt" id="module-id-reminder">
-    <h3>提醒</h3>
-    <div class="content" id="reminder-content">
-      敬请期待
-    </div>
+<textarea name="txt" id="module-id-0">
+    <div class="left"></div>
+    <div class="content"></div>
 </textarea>
+<!-- @TEMPLATE -->
 <textarea name="css" data-src="./index.css"></textarea>
 <textarea name="js"  data-src="./index.js"></textarea>
 ```
