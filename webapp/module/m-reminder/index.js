@@ -4,7 +4,7 @@ NEJ.define([
    'util/template/tpl',
    'util/template/jst',
    'util/dispatcher/module',
-    'mypro/module/module'
+    'mypro/mod'
 ],function(_k,_e,_t0,_j,_t1,_m,_p,_o,_f,_r){
    // variable declaration
    var _pro;
@@ -16,6 +16,8 @@ NEJ.define([
     */
    _p._$$ModuleLayoutSystem = _k._$klass();
    _pro = _p._$$ModuleLayoutSystem._$extend(_m._$$Module);
+
+//    _pro = _p._$$ModuleLayoutSystem._$extend(_t0._$$ModuleAbstract);
    /**
     * 构建模块
     * @return {Void}

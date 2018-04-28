@@ -10,11 +10,11 @@
   <link href="./css/reset.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body id="www-wd-com">
+<body>
   <div id="md-box"></div>
 
   <!-- @VERSION -->
-  <script>
+  <!-- <script>
     location.config = {
       root: './'
     };
@@ -23,7 +23,7 @@
     window.NEJ_CONF = {
       root: '../res/'
     };
-  </script>
+  </script> -->
   <!-- @SCRIPT -->
   <!-- <script src='./javascript/lib/faskclick.js'></script> -->
   <script src="./javascript/lib/nej/define.js"></script>
@@ -75,14 +75,14 @@
           '/m/reminder/': 'module/m-reminder/index.html',
           '/m/profile/': 'module/m-profile/index.html',
         },
-        onbeforechange: function (_options) {
-          // debugger
-          var _umi = _options.path || '';
-          if (!!_umi &&
-            _umi.indexOf('/?') < 0 &&
-            _umi.indexOf('/m') < 0)
-            _options.path = '/m' + _umi;
-        }
+        // onbeforechange: function (_options) {
+        //   // debugger
+        //   var _umi = _options.path || '';
+        //   if (!!_umi &&
+        //     _umi.indexOf('/?') < 0 &&
+        //     _umi.indexOf('/m') < 0)
+        //     _options.path = '/m' + _umi;
+        // }
       });
     });
   </script>

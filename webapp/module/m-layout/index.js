@@ -49,7 +49,6 @@ NEJ.define([
       //     parent:_list[1]
       };
   };
-  _pro.abc = 123;
   _pro.__onShow = function (_options) {
     this.__super(_options); 
       console.log($('.m-ctr'))
