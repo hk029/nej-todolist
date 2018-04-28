@@ -44,7 +44,7 @@
             '/m/':'/m/today/'
           },
           title: {
-              '/m/':'Easy.To.Do - by voidsky',
+              '/':'Easy.To.Do - by voidsky',
               '/m/today/':'Easy.To.Do - 今日待办',
               '/m/history/':'Easy.To.Do - 历史完成',
               '/m/reminder/':'Easy.To.Do- 提醒',
@@ -75,14 +75,14 @@
           '/m/reminder/': 'module/m-reminder/index.html',
           '/m/profile/': 'module/m-profile/index.html',
         },
-        // onbeforechange: function (_options) {
-        //   // debugger
-        //   var _umi = _options.path || '';
-        //   if (!!_umi &&
-        //     _umi.indexOf('/?') < 0 &&
-        //     _umi.indexOf('/m') < 0)
-        //     _options.path = '/m' + _umi;
-        // }
+        onbeforechange: function (_options) {
+          // debugger
+          var _umi = _options.path || '';
+          if (!!_umi &&
+            _umi.indexOf('/?') < 0 &&
+            _umi.indexOf('/m') < 0)
+            _options.path = '/m' + _umi;
+        }
       });
     });
   </script>

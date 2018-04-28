@@ -4,7 +4,7 @@ NEJ.define([
     'util/template/tpl',
     'util/template/jst',
     'util/dispatcher/module',
-    'mypro/module/module',
+    'mypro/module',
     'util/chain/NodeList',
     'mypro/stroage',
     'base/util'

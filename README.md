@@ -308,7 +308,7 @@ NEJ.define([
       '/m/history/': 'module/m-historylist/index.html',
     ```
 
-- onbeforechange 会在模块渲染前进行调用
+- onbeforechange 会在模块渲染前进行调用，**如果你也是使用`/m`作为主模块入口，请在onbeforechange里加入下面代码**
 
 所以一个主入口文件大概长成这样：
 
@@ -365,7 +365,11 @@ NEJ.define([
           '/m/profile/': 'module/m-profile/index.html',
         },
         onbeforechange: function (_options) {
-          // do something
+          var _umi = _options.path || '';
+          if (!!_umi &&
+            _umi.indexOf('/?') < 0 &&
+            _umi.indexOf('/m') < 0)
+            _options.path = '/m' + _umi;
         }
       });
     });
@@ -383,8 +387,6 @@ NEJ.define([
 - 发布订阅者模式
 
 这个在[文档](https://github.com/genify/nej/blob/master/doc/DISPATCHER.md#%E6%B6%88%E6%81%AF)写的比较详细了
-
-
 
 ## 模块划分
 

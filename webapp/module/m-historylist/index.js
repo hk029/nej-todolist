@@ -4,7 +4,7 @@ NEJ.define([
     'util/template/tpl',
     'util/template/jst',
     'util/dispatcher/module',
-    'mypro/module/module',
+    'mypro/module',
     'util/chain/NodeList',
     'mypro/stroage'
 ], function (_k, _e, _t0, _j, _t1, _m, $, _s, _p, _o, _f, _r) {

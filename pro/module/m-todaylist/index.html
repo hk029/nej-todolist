@@ -1,9 +1,7 @@
 <meta charset="utf-8"/>
 <textarea id="module-id-today" name="txt">
-<div class="m-ctr">
 <h3>今日待办事项</h3>
 <div class="content" id="task-content">
-</div>
 </div>
 </textarea>
 <textarea id="task-template" name="jst">
@@ -18,7 +16,7 @@
 {else}
 <img src="/res/img/uncheck.svg" alt="" class="checkico">
 {/if}
-<input type="text" class="text" value="${x.taskname}">
+<input type="text" class="text" value="${x.taskname}" style="width:${width}px">
 </li>
 {/list}
 </ul>
@@ -27,5 +25,5 @@
 {/if}
 {/if}
 </textarea>
-<textarea name="css">.m-ctr{margin-top:70px;background:white;}.m-ctr h3{padding:0 0 20px;font-size:18px;line-height:30px;color:#253b6a;text-align:center;}.m-ctr .content{padding:0px 30px;}.m-ctr .content ul{list-style:none;}.m-ctr .content li{margin:20px 0;}.m-ctr .content li .text{padding:2px 2px;border:none;border-bottom:1px dashed #aaa;font-size:16px;margin-left:10px;width:180px;color:#666;outline-color:#55a8c3;}.m-ctr .content img{width:20px;vertical-align:middle;}.m-ctr .content .checked .text{color:#aaa;text-decoration:line-through;}</textarea>
-<textarea name="js" data-src="../../res/tp_module_m-todaylist_index.js?d0e5a41733fa7b3d6bd85171fd94ffdd"></textarea>
+<textarea name="css">.content{padding-left:40px;}.content ul{list-style:none;}.content li{margin:0 0 30px;}.content li .text{padding:2px 2px;border:none;border-bottom:1px dashed #aaa;font-size:18px;margin-left:10px;width:220px;color:#666;outline-color:#55a8c3;}.content img{width:30px;vertical-align:middle;}.content .checked .text{color:#aaa;text-decoration:line-through;}</textarea>
+<textarea name="js" data-src="../../res/tp_module_m-todaylist_index.js?de31416beb8e1317c17b0e813b6070fa"></textarea>

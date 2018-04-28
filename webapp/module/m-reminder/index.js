@@ -4,7 +4,7 @@ NEJ.define([
    'util/template/tpl',
    'util/template/jst',
    'util/dispatcher/module',
-    'mypro/mod'
+    'mypro/module'
 ],function(_k,_e,_t0,_j,_t1,_m,_p,_o,_f,_r){
    // variable declaration
    var _pro;

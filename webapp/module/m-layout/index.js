@@ -10,7 +10,7 @@ NEJ.define([
   'base/element',
   'util/template/tpl',
   'util/dispatcher/module',
-  'mypro/module/module',
+  'mypro/module',
   'util/chain/NodeList'
 ],function(_k,_e,_t0,_t1,_m,$,_p,_o,_f,_r){
   // variable declaration

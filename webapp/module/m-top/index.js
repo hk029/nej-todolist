@@ -3,7 +3,7 @@ NEJ.define([
    'base/element',
    'util/template/tpl',
    'util/dispatcher/module',
-   'mypro/module/module'
+   'mypro/module'
 ],function(_k,_e,_t0,_t1,_m,_p,_o,_f,_r){
    // variable declaration
    var _pro;
@@ -23,15 +23,6 @@ NEJ.define([
        this.__body = _e._$html2node(
            _t0._$getTextTemplate('module-id-1')
        );
-       console.log('tbuild')
-       
-       // 0 - tab box
-       // 1 - module box
-    //    var _list = _e._$getByClassName(this.__body,'j-flag');
-    //    this.__export = {
-    //        tab:_list[0],
-    //        parent:_list[1]
-    //    };
    };
    // notify dispatcher
    _t1._$regist('layout-top',_p._$$ModuleLayoutSystem);
